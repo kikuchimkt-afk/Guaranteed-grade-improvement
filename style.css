@@ -632,6 +632,17 @@ body {
 
     .header-nav {
         gap: 15px;
+        width: auto;
+        /* Let it shrink/grow */
+        flex-grow: 1;
+        /* Take available space */
+        justify-content: flex-end;
+        /* Align links to right */
+    }
+
+    /* Hide Header CTA on mobile because Sticky Bottom Button exists */
+    .header-cta {
+        display: none;
     }
 }
 

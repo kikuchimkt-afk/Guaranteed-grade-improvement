@@ -177,6 +177,16 @@ span.highlight {
     margin-bottom: 16px;
     line-height: 1.3;
     letter-spacing: -0.05rem;
+    word-break: keep-all;
+    /* Prevent random breaks */
+    overflow-wrap: normal;
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.6rem;
+        /* Ensure it fits on mobile without wrapping */
+    }
 }
 
 /* Shared Section Spacing & Scroll Offset */
@@ -196,6 +206,16 @@ span.highlight {
     color: var(--text-color);
     margin-bottom: 24px;
     font-weight: 700;
+    word-break: keep-all;
+    /* Prevent random breaks */
+    overflow-wrap: normal;
+}
+
+@media (max-width: 480px) {
+    .hero-subtitle {
+        font-size: 0.9rem;
+        /* Smaller to fit single lines */
+    }
 }
 
 .hero-message {
@@ -204,7 +224,20 @@ span.highlight {
     color: var(--text-light);
     margin-bottom: 30px;
     text-align: center;
-    /* Keep message readable */
+    word-break: keep-all;
+    /* Prevent random breaks */
+    overflow-wrap: normal;
+    display: inline-block;
+    /* Helps closely wrap text */
+}
+
+@media (max-width: 480px) {
+    .hero-message {
+        font-size: 0.75rem;
+        /* Small enough to fit typical mobile width */
+        line-height: 2.0;
+        width: 100%;
+    }
 }
 
 .hero-signature {
@@ -627,17 +660,21 @@ body {
     }
 
     .header-logo {
-        font-size: 1rem;
+        font-size: 0.8rem;
+        /* Reduced size as requested */
     }
 
     .header-nav {
-        gap: 15px;
+        gap: 10px;
+        /* Reduced gap */
         width: auto;
-        /* Let it shrink/grow */
         flex-grow: 1;
-        /* Take available space */
         justify-content: flex-end;
-        /* Align links to right */
+    }
+
+    .header-nav a {
+        font-size: 0.8rem;
+        /* Smaller nav links for mobile */
     }
 
     /* Hide Header CTA on mobile because Sticky Bottom Button exists */
@@ -763,45 +800,4 @@ body {
     }
 
     /* Instructors */
-    .content-split {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .image-placeholder {
-        height: 400px;
-        /* Taller on desktop */
-    }
-
-    /* Flow */
-    .step {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .step-number {
-        margin-bottom: 0;
-        margin-right: 30px;
-        font-size: 1.2rem;
-    }
-
-    /* Tuition */
-    .tuition-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* Two columns */
-    }
-
-    .tuition-header h3 {
-        font-size: 1.4rem;
-    }
-
-    .price-amount {
-        font-size: 2.5rem;
-    }
-
-    /* Testimonials */
-    .testimonial-grid {
-        grid-template-columns: repeat(3, 1fr);
-        /* Three columns */
-    }
-}
+    
